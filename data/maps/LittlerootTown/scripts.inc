@@ -904,6 +904,64 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	delay 30
 	return
 
+LittlerootTown_EventScript_SpindaPokeball::
+	lockall
+	msgbox LittlerootTown_Text_TakeBallContainingSpinda, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_LeaveSpinda
+	goto LittlerootTown_EventScript_GiveSpinda
+	end
+
+LittlerootTown_EventScript_LeaveSpinda::
+	msgbox LittlerootTown_Text_LeftPokeBallWhereItWas, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_EventScript_GiveSpinda::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SPINDA
+	givemon SPECIES_SPINDA, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_EventScript_SendSpindaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_EventScript_SendSpindaPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+LittlerootTown_EventScript_SendSpindaParty::
+	call LittlerootTown_EventScript_ReceivedSpindaFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ReceivedSpinda
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_EventScript_ReceivedSpinda
+	end
+
+LittlerootTown_EventScript_SendSpindaPC::
+	call LittlerootTown_EventScript_ReceivedSpindaFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_SpindaTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto LittlerootTown_EventScript_SpindaTransferredToPC
+	end
+
+LittlerootTown_EventScript_SpindaTransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto LittlerootTown_EventScript_ReceivedSpinda
+	end
+
+LittlerootTown_EventScript_ReceivedSpindaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SPINDA
+	removeobject LOCALID_SPINDA_BALL
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_Text_ObtainedSpinda
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SPINDA
+	return
+
+LittlerootTown_EventScript_ReceivedSpinda::
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_SPINDA_POKEBALL
+	setflag FLAG_RECEIVED_SPINDA
+	releaseall
+	end
+
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"
@@ -1014,3 +1072,15 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_Text_TakeBallContainingSpinda:
+	.string "{PLAYER} checked the POKé BALL.\p"
+	.string "It contained the POKéMON\n"
+	.string "SPINDA.\p"
+	.string "Take the POKé BALL?$"
+
+LittlerootTown_Text_LeftPokeBallWhereItWas:
+	.string "{PLAYER} left the POKé BALL where\n"
+	.string "it was.$"
+
+LittlerootTown_Text_ObtainedSpinda:
+	.string "{PLAYER} obtained a SPINDA.$"
