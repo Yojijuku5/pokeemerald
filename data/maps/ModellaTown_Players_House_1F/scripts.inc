@@ -37,6 +37,12 @@ ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock::
 
 ModellaTown_Players_House_1F_EventScript_GoOnErrand::
 	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, ModellaTown_Players_House_1F_Movement_MoveTowardsPlayer
+	waitmovement 0
 	msgbox ModellaTown_Players_House_1F_Text_SpeakErrand, MSGBOX_DEFAULT
 	closemessage
 	end
@@ -45,5 +51,16 @@ ModellaTown_Players_House_1F_Movement_PushTowardStairs:
 	walk_up
 	step_end
 
+ModellaTown_Players_House_1F_Movement_MoveTowardsPlayer:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
 ModellaTown_Players_House_1F_Text_SpeakErrand:
-	.string "Todo, 2$"
+	.string "Todo, 3$"

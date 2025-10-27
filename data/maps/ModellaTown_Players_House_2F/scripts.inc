@@ -7,6 +7,21 @@ ModellaTown_Players_House_2F_EventScript_SetClock::
 	setvar VAR_LITTLEROOT_INTRO_STATE, 5
 	end
 
+ModellaTown_Players_House_2F_EventScript_PC::
+	lockall
+	goto ModellaTown_Players_House_2F_EventScript_CheckPlayersPC
+	end
+
+ModellaTown_Players_House_2F_EventScript_CheckPlayersPC::
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
+	special BedroomPC
+	waitstate
+	releaseall
+	end
+
 ModellaTown_Players_House_2F_Text_SetClockThenLeave:
 	.string "MOM: {PLAYER}! Have you had a chance\n"
 	.string "to set your new clock yet?\p"
