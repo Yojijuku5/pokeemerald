@@ -1059,3 +1059,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/ModellaTown/scripts.inc"
+
+	.include "data/maps/ModellaTown_Players_House_1F/scripts.inc"
+
+	.include "data/maps/ModellaTown_Players_House_2F/scripts.inc"

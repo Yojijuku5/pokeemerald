@@ -4410,6 +4410,36 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_MODELLA_TOWN",
+      "name": "ModellaTown_Layout",
+      "width": 20,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ModellaTown/border.bin",
+      "blockdata_filepath": "data/layouts/ModellaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_MODELLA_TOWN_PLAYERS_HOUSE_1F",
+      "name": "ModellaTown_Players_House_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ModellaTown_Players_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ModellaTown_Players_House_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MODELLA_TOWN_PLAYERS_HOUSE_2F",
+      "name": "ModellaTown_Players_House_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ModellaTown_Players_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ModellaTown_Players_House_2F/map.bin"
     }
   ]
 }

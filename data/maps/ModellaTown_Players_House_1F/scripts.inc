@@ -1,0 +1,49 @@
+ModellaTown_Players_House_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ModellaTown_Players_House_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ModellaTown_Players_House_1F_OnFrame
+	.byte 0
+
+ModellaTown_Players_House_1F_OnTransition::
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, ModellaTown_Players_House_1F_EventScript_MoveMomToStairs
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, ModellaTown_Players_House_1F_EventScript_MoveMomToSeat
+	end
+
+ModellaTown_Players_House_1F_EventScript_MoveMomToStairs::
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 8, 4
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
+	return
+
+ModellaTown_Players_House_1F_EventScript_MoveMomToSeat::
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 2, 6
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+ModellaTown_Players_House_1F_OnFrame::
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, ModellaTown_Players_House_1F_EventScript_GoOnErrand
+	.2byte 0
+
+ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock::
+	lockall
+	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, ModellaTown_Players_House_1F_Movement_PushTowardStairs
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, ModellaTown_Players_House_1F_Movement_PushTowardStairs
+	waitmovement 0
+	warp MAP_MODELLA_TOWN_PLAYERS_HOUSE_2F, 7, 1
+	waitstate
+	releaseall
+	end
+
+ModellaTown_Players_House_1F_EventScript_GoOnErrand::
+	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	msgbox ModellaTown_Players_House_1F_Text_SpeakErrand, MSGBOX_DEFAULT
+	closemessage
+	end
+
+ModellaTown_Players_House_1F_Movement_PushTowardStairs:
+	walk_up
+	step_end
+
+ModellaTown_Players_House_1F_Text_SpeakErrand:
+	.string "Todo, 2$"
