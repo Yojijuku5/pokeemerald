@@ -45,6 +45,8 @@ ModellaTown_Players_House_1F_EventScript_GoOnErrand::
 	waitmovement 0
 	msgbox ModellaTown_Players_House_1F_Text_SpeakErrand, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, ModellaTown_Players_House_1F_Movement_MoveTowardsSeat
+	waitmovement 0
 	end
 
 ModellaTown_Players_House_1F_Movement_PushTowardStairs:
@@ -62,5 +64,26 @@ ModellaTown_Players_House_1F_Movement_MoveTowardsPlayer:
 	walk_up
 	step_end
 
+ModellaTown_Players_House_1F_Movement_MoveTowardsSeat
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
 ModellaTown_Players_House_1F_Text_SpeakErrand:
-	.string "Todo, 3$"
+	.string "{PLAYER}, have you set your clock?\n"
+	.string "... ... ...\p"
+	.string "Good, good. Now if you don't mind, I'd\n"
+	.string "like you to do me a quick favor.\p"
+	.string "Up in DIMWOOD TOWN's POKéMART, I've had\n"
+	.string "a parcel delivered.\p"
+	.string "If you could go and collect it,\n"
+	.string "that would be very nice.\p"
+	.string "But remember! You don't have any\n"
+	.string "POKéMON with you, so be sure to\p"
+	.string "stay out of the tall grass!$"

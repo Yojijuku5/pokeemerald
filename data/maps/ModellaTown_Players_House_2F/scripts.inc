@@ -22,7 +22,15 @@ ModellaTown_Players_House_2F_EventScript_CheckPlayersPC::
 	releaseall
 	end
 
+ModellaTown_Players_House_2F_EventScript_Doll::
+	msgbox ModellaTown_Players_House_2F_Text_Doll, MSGBOX_DEFAULT
+	end
+
 ModellaTown_Players_House_2F_Text_SetClockThenLeave:
 	.string "MOM: {PLAYER}! Have you had a chance\n"
 	.string "to set your new clock yet?\p"
 	.string "Do that then come downstairs!$"
+
+ModellaTown_Players_House_2F_Text_Doll:
+	.string "It's a BALTOY Doll you were given when\n"
+	.string "you were little.$"
