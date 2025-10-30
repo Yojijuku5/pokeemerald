@@ -664,6 +664,10 @@ static void CB2_EndWildBattle(void)
     }
     else
     {
+        if (VarGet(VAR_ROUTE23_STATE) == 3)
+        {
+            VarSet(VAR_ROUTE23_STATE, 4);
+        }
         SetMainCallback2(CB2_ReturnToField);
         gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
     }
@@ -976,9 +980,10 @@ static void CB2_GiveStarter(void)
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE, 0, 0, 0);
     ResetTasks();
-    PlayBattleBGM();
+    //PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
-    BattleTransition_Start(B_TRANSITION_BLUR);
+    //BattleTransition_Start(B_TRANSITION_BLUR);
+    BeginNormalPaletteFade(0xFFFFFFFF, -1, 0, 0x10, 0);
 }
 
 static void CB2_StartFirstBattle(void)
@@ -986,25 +991,27 @@ static void CB2_StartFirstBattle(void)
     UpdatePaletteFade();
     RunTasks();
 
-    if (IsBattleTransitionDone() == TRUE)
+    //if (IsBattleTransitionDone() == TRUE)
+    if (!gPaletteFade.active)
     {
         gBattleTypeFlags = BATTLE_TYPE_FIRST_BATTLE;
         gMain.savedCallback = CB2_EndFirstBattle;
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_InitBattle);
+        //SetMainCallback2(CB2_InitBattle);
+        SetMainCallback2(CB2_EndFirstBattle);
         RestartWildEncounterImmunitySteps();
         ClearPoisonStepCounter();
-        IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-        IncrementGameStat(GAME_STAT_WILD_BATTLES);
-        IncrementDailyWildBattles();
-        TryUpdateGymLeaderRematchFromWild();
+        //IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+        //IncrementGameStat(GAME_STAT_WILD_BATTLES);
+        //IncrementDailyWildBattles();
+        //TryUpdateGymLeaderRematchFromWild();
     }
 }
 
 static void CB2_EndFirstBattle(void)
 {
-    Overworld_ClearSavedMusic();
-    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        Overworld_ClearSavedMusic();
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 static void TryUpdateGymLeaderRematchFromWild(void)

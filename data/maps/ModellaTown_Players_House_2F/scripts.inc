@@ -4,7 +4,7 @@ ModellaTown_Players_House_2F_MapScripts::
 ModellaTown_Players_House_2F_EventScript_SetClock::
 	msgbox ModellaTown_Players_House_2F_Text_SetClockThenLeave, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_LITTLEROOT_INTRO_STATE, 5
+	setvar VAR_MODELLA_INTRO_STATE, 1
 	end
 
 ModellaTown_Players_House_2F_EventScript_PC::
@@ -24,6 +24,7 @@ ModellaTown_Players_House_2F_EventScript_CheckPlayersPC::
 
 ModellaTown_Players_House_2F_EventScript_Doll::
 	msgbox ModellaTown_Players_House_2F_Text_Doll, MSGBOX_DEFAULT
+	closemessage
 	end
 
 ModellaTown_Players_House_2F_Text_SetClockThenLeave:

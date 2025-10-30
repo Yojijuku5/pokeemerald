@@ -3,9 +3,15 @@ ModellaTown_Players_House_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, ModellaTown_Players_House_1F_OnFrame
 	.byte 0
 
+	@ State descriptions for VAR_MODELLA_INTRO_STATE
+	@ 0: Wake up
+	@ 1: Before set clock
+	@ 2: After set clock
+	@ 3: Go on errand
+
 ModellaTown_Players_House_1F_OnTransition::
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, ModellaTown_Players_House_1F_EventScript_MoveMomToStairs
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, ModellaTown_Players_House_1F_EventScript_MoveMomToSeat
+	call_if_eq VAR_MODELLA_INTRO_STATE, 1, ModellaTown_Players_House_1F_EventScript_MoveMomToStairs
+	call_if_eq VAR_MODELLA_INTRO_STATE, 2, ModellaTown_Players_House_1F_EventScript_MoveMomToSeat
 	end
 
 ModellaTown_Players_House_1F_EventScript_MoveMomToStairs::
@@ -19,8 +25,8 @@ ModellaTown_Players_House_1F_EventScript_MoveMomToSeat::
 	return
 
 ModellaTown_Players_House_1F_OnFrame::
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, ModellaTown_Players_House_1F_EventScript_GoOnErrand
+	map_script_2 VAR_MODELLA_INTRO_STATE, 1, ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock
+	map_script_2 VAR_MODELLA_INTRO_STATE, 2, ModellaTown_Players_House_1F_EventScript_GoOnErrand
 	.2byte 0
 
 ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock::
@@ -36,7 +42,8 @@ ModellaTown_Players_House_1F_EventScript_GoUpstairsToSetClock::
 	end
 
 ModellaTown_Players_House_1F_EventScript_GoOnErrand::
-	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	setvar VAR_MODELLA_INTRO_STATE, 3
+	playse SE_PIN
 	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_Delay48
@@ -64,7 +71,7 @@ ModellaTown_Players_House_1F_Movement_MoveTowardsPlayer:
 	walk_up
 	step_end
 
-ModellaTown_Players_House_1F_Movement_MoveTowardsSeat
+ModellaTown_Players_House_1F_Movement_MoveTowardsSeat:
 	walk_down
 	walk_left
 	walk_left
@@ -73,17 +80,18 @@ ModellaTown_Players_House_1F_Movement_MoveTowardsSeat
 	walk_left
 	walk_left
 	walk_down
+	walk_in_place_faster_right
 	step_end
 
 ModellaTown_Players_House_1F_Text_SpeakErrand:
-	.string "{PLAYER}, have you set your clock?\n"
+	.string "{PLAYER}, have you set your clock?\p"
 	.string "... ... ...\p"
 	.string "Good, good. Now if you don't mind, I'd\n"
 	.string "like you to do me a quick favor.\p"
 	.string "Up in DIMWOOD TOWN's POKéMART, I've had\n"
-	.string "a parcel delivered.\p"
-	.string "If you could go and collect it,\n"
+	.string "a parcel delivered.\l"
+	.string "If you could go and collect it,\l"
 	.string "that would be very nice.\p"
 	.string "But remember! You don't have any\n"
-	.string "POKéMON with you, so be sure to\p"
+	.string "POKéMON with you, so be sure to\l"
 	.string "stay out of the tall grass!$"

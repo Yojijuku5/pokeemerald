@@ -43,7 +43,7 @@
       "x": 7,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var": "VAR_MODELLA_INTRO_STATE",
       "var_value": "0",
       "script": "ModellaTown_Players_House_2F_EventScript_SetClock"
     }
