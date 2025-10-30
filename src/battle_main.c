@@ -4110,7 +4110,7 @@ u8 IsRunningFromBattleImpossible(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
         return BATTLE_RUN_FORBIDDEN;
     }
-    if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+    if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE || VarGet(VAR_ROUTE23_STATE) == 3)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DONT_LEAVE_BIRCH;
         return BATTLE_RUN_FORBIDDEN;

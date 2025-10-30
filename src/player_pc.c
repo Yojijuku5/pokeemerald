@@ -2,9 +2,11 @@
 #include "constants/songs.h"
 #include "bg.h"
 #include "decoration.h"
+#include "event_data.h"
 #include "event_scripts.h"
 #include "event_object_movement.h"
 #include "field_screen_effect.h"
+#include "../include/constants/field_specials.h"
 #include "field_weather.h"
 #include "international_string_util.h"
 #include "item.h"
@@ -493,10 +495,20 @@ static void PlayerPC_TurnOff(u8 taskId)
 {
     if (sTopMenuNumOptions == NUM_BEDROOM_PC_OPTIONS) // Flimsy way to determine if Bedroom PC is in use
     {
-        if (gSaveBlock2Ptr->playerGender == MALE)
+        if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
+        {
+            ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
+        }
+        else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
+        {
+            ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+        }
+        /*
+        if (gSaveBlock2Ptr->playerGender == MALE)//Despite location checking when pc turns on, it gender checks for turning off
             ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
         else
             ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+        */
     }
     else
     {
