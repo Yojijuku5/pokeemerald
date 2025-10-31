@@ -264,6 +264,8 @@
 #define MON_PIC_HEIGHT 64
 #define MON_PIC_SIZE (MON_PIC_WIDTH * MON_PIC_HEIGHT / 2)
 
+#define NUM_ABILITY_SLOTS 3
+
 // Most Pokémon have 2 frames (a default and an alternate for their animation).
 // There are 4 exceptions:
 // - Castform has 4 frames, 1 for each form
