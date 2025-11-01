@@ -2712,6 +2712,14 @@ const u32 gMonShinyPalette_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/sh
 const u8 gMonIcon_Chimecho[] = INCBIN_U8("graphics/pokemon/chimecho/icon.4bpp");
 const u8 gMonFootprint_Chimecho[] = INCBIN_U8("graphics/pokemon/chimecho/footprint.1bpp");
 
+//New Pokemon
+const u32 gMonStillFrontPic_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/front.4bpp.lz");
+const u32 gMonPalette_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/normal.gbapal.lz");
+const u32 gMonBackPic_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/back.4bpp.lz");
+const u32 gMonShinyPalette_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/shiny.gbapal.lz");
+const u8 gMonIcon_Newttle[] = INCBIN_U8("graphics/pokemon/newttle/icon.4bpp");
+const u8 gMonFootprint_Newttle[] = INCBIN_U8("graphics/pokemon/newttle/footprint.1bpp");
+
 const u32 gMonStillFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 

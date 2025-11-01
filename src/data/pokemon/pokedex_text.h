@@ -2319,3 +2319,9 @@ const u8 gDeoxysPokedexText[] = _(
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
     "agility and speed.");
+
+const u8 gNewttlePokedexText[] = _(
+    "NEWTTLE can use it's large tail either to\n"
+    "intimidate lesser enemies or to camouflage\n"
+    "itself from larger enemies depending on\n"
+    "the situation.");

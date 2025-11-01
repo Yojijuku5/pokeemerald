@@ -4643,4 +4643,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 290,
         .trainerOffset = 2,
     },
+
+    [NATIONAL_DEX_NEWTTLE] = 
+    {
+        .categoryName = _("NETTLE"),
+        .height = 3,
+        .weight = 200,
+        .description = gNewttlePokedexText,
+        .pokemonScale = 608,
+        .pokemonOffset = -8,
+        .trainerScale = 256,
+        .trainerOffset = 2,
+    },
 };

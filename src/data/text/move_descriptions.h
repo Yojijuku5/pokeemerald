@@ -1418,8 +1418,8 @@ static const u8 sPsychoBoostDescription[] = _(
     "but sharply lowers SP. ATK.");
 
 static const u8 sLeafageDescription[] = _(
-    "Attacks by pelting the target\n"
-    "with leaves.");
+    "Attacks by pelting the\n"
+    "target with leaves.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =

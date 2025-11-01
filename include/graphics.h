@@ -2740,6 +2740,14 @@ extern const u32 gMonShinyPalette_Chimecho[];
 extern const u32 gMonStillFrontPic_Chimecho[];
 extern const u8 gMonIcon_Chimecho[];
 extern const u8 gMonFootprint_Chimecho[];
+//New Pokemon
+extern const u32 gMonFrontPic_Newttle[];
+extern const u32 gMonPalette_Newttle[];
+extern const u32 gMonBackPic_Newttle[];
+extern const u32 gMonShinyPalette_Newttle[];
+extern const u32 gMonStillFrontPic_Newttle[];
+extern const u8 gMonIcon_Newttle[];
+extern const u8 gMonFootprint_Newttle[];
 extern const u32 gMonPic_Egg[];
 extern const u32 gMonPalette_Egg[];
 extern const u32 gMonFrontPic_Egg[];

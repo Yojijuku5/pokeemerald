@@ -10180,4 +10180,26 @@ const union {
         .FLASH = TRUE,
     } },
 
+    //New Pokemon
+
+    [SPECIES_NEWTTLE] = { .learnset = {
+        .TOXIC = TRUE,
+        .BULK_UP = TRUE,
+        .BULLET_SEED = TRUE,
+        .HIDDEN_POWER = TRUE,
+        .TAUNT = TRUE,
+        .PROTECT = TRUE,
+        .GIGA_DRAIN = TRUE,
+        .FRUSTRATION = TRUE,
+        .IRON_TAIL = TRUE,
+        .THUNDERBOLT = TRUE,
+        .RETURN = TRUE,
+        .SHOCK_WAVE = TRUE,
+        .FACADE = TRUE,
+        .SECRET_POWER = TRUE,
+        .REST = TRUE,
+        .THIEF = TRUE,
+        .CUT = TRUE,
+        .FLASH = TRUE,
+    } },
 };

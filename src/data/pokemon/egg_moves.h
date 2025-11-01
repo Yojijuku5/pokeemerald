@@ -1306,5 +1306,13 @@ const u16 gEggMoves[] = {
               MOVE_HYPNOSIS,
               MOVE_DREAM_EATER),
 
+    //New Pokemon
+
+    egg_moves(NEWTTLE,
+              MOVE_POISON_POWDER,
+              MOVE_SCARY_FACE,
+              MOVE_CHARGE,
+              MOVE_MUD_SPORT),
+
     EGG_MOVES_TERMINATOR
 };
