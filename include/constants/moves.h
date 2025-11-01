@@ -357,8 +357,10 @@
 #define MOVE_DOOM_DESIRE 353
 #define MOVE_PSYCHO_BOOST 354
 #define MOVE_LEAFAGE 355
+#define MOVE_ENERGY_BALL 356
+#define MOVE_EERIE_IMPULSE 357
 
-#define MOVES_COUNT 356
+#define MOVES_COUNT 358
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

@@ -79,7 +79,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectAttackDown2            @ EFFECT_ATTACK_DOWN_2
 	.4byte BattleScript_EffectDefenseDown2           @ EFFECT_DEFENSE_DOWN_2
 	.4byte BattleScript_EffectSpeedDown2             @ EFFECT_SPEED_DOWN_2
-	.4byte BattleScript_EffectHit                    @ EFFECT_SPECIAL_ATTACK_DOWN_2
+	.4byte BattleScript_EffectSpecialAttackDown2     @ EFFECT_SPECIAL_ATTACK_DOWN_2
 	.4byte BattleScript_EffectSpecialDefenseDown2    @ EFFECT_SPECIAL_DEFENSE_DOWN_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_ACCURACY_DOWN_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_EVASION_DOWN_2
@@ -965,6 +965,10 @@ BattleScript_EffectDefenseDown2::
 
 BattleScript_EffectSpeedDown2::
 	setstatchanger STAT_SPEED, 2, TRUE
+	goto BattleScript_EffectStatDown
+
+BattleScript_EffectSpecialAttackDown2::
+	setstatchanger STAT_SPATK, 2, TRUE
 	goto BattleScript_EffectStatDown
 
 BattleScript_EffectSpecialDefenseDown2::

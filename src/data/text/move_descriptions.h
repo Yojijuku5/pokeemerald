@@ -1421,6 +1421,14 @@ static const u8 sLeafageDescription[] = _(
     "Attacks by pelting the\n"
     "target with leaves.");
 
+static const u8 sEnergyBallDescription[] = _(
+    "Draws power from nature to\n"
+    "attack. May lower SP. DEF.");
+
+static const u8 sEerieImpulseDescription[] = _(
+    "Generates an eerie impulse\n"
+    "that sharply lowers SP. ATK");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1779,4 +1787,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DOOM_DESIRE - 1] = sDoomDesireDescription,
     [MOVE_PSYCHO_BOOST - 1] = sPsychoBoostDescription,
     [MOVE_LEAFAGE - 1] = sLeafageDescription,
+    [MOVE_ENERGY_BALL - 1] = sEnergyBallDescription,
+    [MOVE_EERIE_IMPULSE - 1] = sEerieImpulseDescription,
 };
