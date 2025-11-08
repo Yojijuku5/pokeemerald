@@ -414,5 +414,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_CHIMECHO] = gMonFootprint_Chimecho,
     //New Pokemon
     [SPECIES_NEWTTLE] = gMonFootprint_Newttle,
+    [SPECIES_SAPRICKLE] = gMonFootprint_Saprickle,
+    [SPECIES_MOLCHARGE] = gMonFootprint_Molcharge,
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

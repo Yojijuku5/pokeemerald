@@ -99,9 +99,21 @@ struct DisableStruct
     u8 rechargeTimer;
 };
 
+enum ProtectState
+{
+    PROTECT_NONE = 0,
+    PROTECT_NORMAL = 1,
+    PROTECT_NETTLE = 2,
+    PROTECT_MAGMA = 3,
+    PROTECT_AQUA = 4,
+    PROTECT_UNUSED = 5,
+    PROTECT_UNUSED2 = 6,
+    PROTECT_UNUSED3 = 7,
+};
+
 struct ProtectStruct
 {
-    u32 protected:1;
+    u32 protected:3;
     u32 endured:1;
     u32 noValidMoves:1;
     u32 helpingHand:1;

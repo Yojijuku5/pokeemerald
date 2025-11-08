@@ -519,6 +519,8 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(DEOXYS),
     SPECIES_TO_HOENN(CHIMECHO),
     SPECIES_TO_HOENN(NEWTTLE),
+    SPECIES_TO_HOENN(SAPRICKLE),
+    SPECIES_TO_HOENN(MOLCHARGE),
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -936,6 +938,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
     SPECIES_TO_NATIONAL(NEWTTLE),
+    SPECIES_TO_NATIONAL(SAPRICKLE),
+    SPECIES_TO_NATIONAL(MOLCHARGE),
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1144,6 +1148,8 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(JIRACHI),
     HOENN_TO_NATIONAL(DEOXYS),
     HOENN_TO_NATIONAL(NEWTTLE),
+    HOENN_TO_NATIONAL(SAPRICKLE),
+    HOENN_TO_NATIONAL(MOLCHARGE),
     HOENN_TO_NATIONAL(BULBASAUR), // Pokémon from here onwards are UNSEEN in the HoennDex.
     HOENN_TO_NATIONAL(IVYSAUR),
     HOENN_TO_NATIONAL(VENUSAUR),
@@ -1793,6 +1799,9 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_JIRACHI - 1]     = ANIM_SWING_CONVEX,
     [SPECIES_DEOXYS - 1]      = ANIM_H_PIVOT,
     [SPECIES_CHIMECHO - 1]    = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_NEWTTLE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SAPRICKLE - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MOLCHARGE - 1] = ANIM_V_SQUISH_AND_BOUNCE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

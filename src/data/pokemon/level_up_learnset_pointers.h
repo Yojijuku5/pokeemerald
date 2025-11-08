@@ -414,4 +414,6 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
     //New Pokemon
     [SPECIES_NEWTTLE] = sNewttleLevelUpLearnset,
+    [SPECIES_SAPRICKLE] = sSaprickleLevelUpLearnset,
+    [SPECIES_MOLCHARGE] = sMolchargeLevelUpLearnset,
 };

@@ -137,4 +137,6 @@ const u16 gSpeciesIdToCryId[] =
     [SPECIES_CHIMECHO - 277] = 387,
     //New Pokemon
     [SPECIES_NEWTTLE - 277] = 388,
+    [SPECIES_SAPRICKLE - 277] = 389,
+    [SPECIES_MOLCHARGE - 277] = 390,
 };

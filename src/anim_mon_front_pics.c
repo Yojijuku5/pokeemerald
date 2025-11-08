@@ -394,6 +394,8 @@ const u32 gMonFrontPic_Deoxys[] = INCBIN_U32("graphics/pokemon/deoxys/anim_front
 const u32 gMonFrontPic_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/anim_front.4bpp.lz");
 //New Pokemon
 const u32 gMonFrontPic_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Saprickle[] = INCBIN_U32("graphics/pokemon/saprickle/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Molcharge[] = INCBIN_U32("graphics/pokemon/molcharge/anim_front.4bpp.lz");
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 

@@ -359,8 +359,16 @@
 #define MOVE_LEAFAGE 355
 #define MOVE_ENERGY_BALL 356
 #define MOVE_EERIE_IMPULSE 357
+#define MOVE_NUZZLE 358
+#define MOVE_SEED_BOMB 359
+#define MOVE_PETAL_STORM 360
+#define MOVE_WILD_CHARGE 361
+#define MOVE_VOLT_SWITCH 362
+#define MOVE_NETTLE_SHIELD 363
+#define MOVE_MAGMA_SHIELD 364
+#define MOVE_AQUA_SHIELD 365
 
-#define MOVES_COUNT 358
+#define MOVES_COUNT 366
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

@@ -1945,6 +1945,14 @@ Cry_Newttle::
 	.incbin "sound/direct_sound_samples/cries/newttle.bin"
 
 	.align 2
+Cry_Saprickle::
+	.incbin "sound/direct_sound_samples/cries/saprickle.bin"
+
+	.align 2
+Cry_Molcharge::
+	.incbin "sound/direct_sound_samples/cries/molcharge.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

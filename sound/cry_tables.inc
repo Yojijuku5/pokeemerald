@@ -389,6 +389,8 @@ gCryTable::
 	cry Cry_Deoxys
 	cry Cry_Chimecho
 	cry Cry_Newttle
+	cry Cry_Saprickle
+	cry Cry_Molcharge
 
 	.align 2
 gCryTable_Reverse::
@@ -781,3 +783,5 @@ gCryTable_Reverse::
 	cry_reverse Cry_Deoxys
 	cry_reverse Cry_Chimecho
 	cry_reverse Cry_Newttle
+	cry_reverse Cry_Saprickle
+	cry_reverse Cry_Molcharge

@@ -1427,7 +1427,39 @@ static const u8 sEnergyBallDescription[] = _(
 
 static const u8 sEerieImpulseDescription[] = _(
     "Generates an eerie impulse\n"
-    "that sharply lowers SP. ATK");
+    "that sharply lowers SP. ATK.");
+
+static const u8 sNuzzleDescription[] = _(
+    "Nuzzles electric cheeks and\n"
+    "paralyzes the target.");
+
+static const u8 sSeedBombDescription[] = _(
+    "Slams a barrage of hard\n"
+    "seeds onto the target.");
+
+static const u8 sPetalStormDescription[] = _(
+    "Stirs up a violent petal\n"
+    "blizzard and attacks.");
+
+static const u8 sWildChargeDescription[] = _(
+    "A wild electric charge\n"
+    "that also hurts the user.");
+
+static const u8 sVoltSwitchDescription[] = _(
+    "Attacks, then rushes back\n"
+    "and switches out the user.");
+
+static const u8 sNettleShieldDescription[] = _(
+    "A protecting move that also\n"
+    "paralyses contacting foes.");
+
+static const u8 sMagmaShieldDescription[] = _(
+    "A protecting move that also\n"
+    "burns contacting foes.");
+
+static const u8 sAquaShieldDescription[] = _(
+    "A protecting move that also\n"
+    "heals the user when hit.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -1789,4 +1821,12 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_LEAFAGE - 1] = sLeafageDescription,
     [MOVE_ENERGY_BALL - 1] = sEnergyBallDescription,
     [MOVE_EERIE_IMPULSE - 1] = sEerieImpulseDescription,
+    [MOVE_NUZZLE - 1] = sNuzzleDescription,
+    [MOVE_SEED_BOMB - 1] = sSeedBombDescription,
+    [MOVE_PETAL_STORM - 1] = sPetalStormDescription,
+    [MOVE_WILD_CHARGE - 1] = sWildChargeDescription,
+    [MOVE_VOLT_SWITCH - 1] = sVoltSwitchDescription,
+    [MOVE_NETTLE_SHIELD - 1] = sNettleShieldDescription,
+    [MOVE_MAGMA_SHIELD - 1] = sMagmaShieldDescription,
+    [MOVE_AQUA_SHIELD - 1] = sAquaShieldDescription,
 };

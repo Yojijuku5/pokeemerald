@@ -4651,8 +4651,32 @@ const struct PokedexEntry gPokedexEntries[] =
         .weight = 200,
         .description = gNewttlePokedexText,
         .pokemonScale = 608,
-        .pokemonOffset = -8,
+        .pokemonOffset = 0,
         .trainerScale = 256,
         .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_SAPRICKLE] =
+    {
+        .categoryName = _("ROUGH LEAF"),
+        .height = 3,
+        .weight = 240,
+        .description = gSapricklePokedexText,
+        .pokemonScale = 550,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_MOLCHARGE] =
+    {
+        .categoryName = _("SHOCK NEWT"),
+        .height = 3,
+        .weight = 200,
+        .description = gMolchargePokedexText,
+        .pokemonScale = 410,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 };

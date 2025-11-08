@@ -4461,11 +4461,11 @@ static void Cmd_moveend(void)
 
                 target = gBattlerTarget;
                 attacker = gBattlerAttacker;
-                *(attacker * 2 + target * 8 + (u8 *)(gBattleStruct->lastTakenMoveFrom) + 0) = gChosenMove;
+                *(attacker * 2 + target * 8 + (u8*)(gBattleStruct->lastTakenMoveFrom) + 0) = gChosenMove;
 
                 target = gBattlerTarget;
                 attacker = gBattlerAttacker;
-                *(attacker * 2 + target * 8 + (u8 *)(gBattleStruct->lastTakenMoveFrom) + 1) = gChosenMove >> 8;
+                *(attacker * 2 + target * 8 + (u8*)(gBattleStruct->lastTakenMoveFrom) + 1) = gChosenMove >> 8;
             }
             gBattleScripting.moveendState++;
             break;
@@ -4488,6 +4488,47 @@ static void Cmd_moveend(void)
                 else
                 {
                     gHitMarker |= HITMARKER_NO_ATTACKSTRING;
+                }
+            }
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_PROTECT: //Starter Protects (Nettle, Magma, Aqua)
+            if ((gProtectStructs[gBattlerTarget].protected == PROTECT_NETTLE) && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+            {
+                gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_PARALYSIS;
+                Cmd_seteffectprimary();
+                gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                effect = TRUE;
+            }
+            if ((gProtectStructs[gBattlerTarget].protected == PROTECT_MAGMA) && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+            {
+                gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_BURN;
+                Cmd_seteffectprimary();
+                gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                effect = TRUE;
+            }
+            if ((gProtectStructs[gBattlerTarget].protected == PROTECT_AQUA) && gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+            {
+                if (gBattleMons[gBattlerTarget].hp != gBattleMons[gBattlerTarget].maxHP)
+                {
+                    gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
+
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;
+                    gBattleMoveDamage *= -1;
+                    gMoveResultFlags &= ~MOVE_RESULT_NO_EFFECT;
+
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_AquaShield;
+
+                    effect = TRUE;
+                }
+                else
+                {
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_AquaAtFullHp;
+
+                    effect = TRUE;
                 }
             }
             gBattleScripting.moveendState++;
@@ -6509,13 +6550,13 @@ static void Cmd_various(void)
     gBattlescriptCurrInstr += 3;
 }
 
- // Protect and Endure
+ // Protect, Endure, Starter Shields
 static void Cmd_setprotectlike(void)
 {
     bool8 notLastTurn = TRUE;
     u16 lastMove = gLastResultingMoves[gBattlerAttacker];
 
-    if (lastMove != MOVE_PROTECT && lastMove != MOVE_DETECT && lastMove != MOVE_ENDURE)
+    if (lastMove != MOVE_PROTECT && lastMove != MOVE_DETECT && lastMove != MOVE_ENDURE && lastMove != MOVE_NETTLE_SHIELD && lastMove != MOVE_MAGMA_SHIELD && lastMove != MOVE_AQUA_SHIELD)
         gDisableStructs[gBattlerAttacker].protectUses = 0;
 
     if (gCurrentTurnActionNumber == (gBattlersCount - 1))
@@ -6525,12 +6566,27 @@ static void Cmd_setprotectlike(void)
     {
         if (gBattleMoves[gCurrentMove].effect == EFFECT_PROTECT)
         {
-            gProtectStructs[gBattlerAttacker].protected = 1;
+            if (gCurrentMove == MOVE_PROTECT)
+            {
+                gProtectStructs[gBattlerAttacker].protected = PROTECT_NORMAL;
+            }
+            if (gCurrentMove == MOVE_NETTLE_SHIELD)
+            {
+                gProtectStructs[gBattlerAttacker].protected = PROTECT_NETTLE;
+            }
+            if (gCurrentMove == MOVE_MAGMA_SHIELD)
+            {
+                gProtectStructs[gBattlerAttacker].protected = PROTECT_MAGMA;
+            }
+            if (gCurrentMove == MOVE_AQUA_SHIELD)
+            {
+                gProtectStructs[gBattlerAttacker].protected = PROTECT_AQUA;
+            }
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_ITSELF;
         }
         if (gBattleMoves[gCurrentMove].effect == EFFECT_ENDURE)
         {
-            gProtectStructs[gBattlerAttacker].endured = 1;
+            gProtectStructs[gBattlerAttacker].endured = PROTECT_NORMAL;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BRACED_ITSELF;
         }
         gDisableStructs[gBattlerAttacker].protectUses++;

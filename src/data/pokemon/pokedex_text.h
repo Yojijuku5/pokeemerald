@@ -2325,3 +2325,15 @@ const u8 gNewttlePokedexText[] = _(
     "intimidate lesser enemies or to camouflage\n"
     "itself from larger enemies depending on\n"
     "the situation.");
+
+const u8 gSapricklePokedexText[] = _(
+    "A weak stinging sensation can be felt when\n"
+    "touching a SAPRICKLE's large leafy tail.\n"
+    "For humans, this is not enough to cause\n"
+    "much harm however.");
+
+const u8 gMolchargePokedexText[] = _(
+    "MOLCHARGE does not have to rely on it's\n"
+    "tail as often as it may have done when\n"
+    "it was younger. As such, even if it gets\n"
+    "injured, it can still defend itself.");

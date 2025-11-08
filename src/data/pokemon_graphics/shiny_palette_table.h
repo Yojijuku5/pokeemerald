@@ -414,6 +414,8 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(CHIMECHO, gMonShinyPalette_Chimecho),
     //New Pokemon
     SPECIES_SHINY_PAL(NEWTTLE, gMonShinyPalette_Newttle),
+    SPECIES_SHINY_PAL(SAPRICKLE, gMonShinyPalette_Saprickle),
+    SPECIES_SHINY_PAL(MOLCHARGE, gMonShinyPalette_Molcharge),
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
     SPECIES_SHINY_PAL(UNOWN_B, gMonShinyPalette_Unown),
     SPECIES_SHINY_PAL(UNOWN_C, gMonShinyPalette_Unown),

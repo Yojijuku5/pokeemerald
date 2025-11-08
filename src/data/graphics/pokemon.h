@@ -2720,6 +2720,20 @@ const u32 gMonShinyPalette_Newttle[] = INCBIN_U32("graphics/pokemon/newttle/shin
 const u8 gMonIcon_Newttle[] = INCBIN_U8("graphics/pokemon/newttle/icon.4bpp");
 const u8 gMonFootprint_Newttle[] = INCBIN_U8("graphics/pokemon/newttle/footprint.1bpp");
 
+const u32 gMonStillFrontPic_Saprickle[] = INCBIN_U32("graphics/pokemon/saprickle/front.4bpp.lz");
+const u32 gMonPalette_Saprickle[] = INCBIN_U32("graphics/pokemon/saprickle/normal.gbapal.lz");
+const u32 gMonBackPic_Saprickle[] = INCBIN_U32("graphics/pokemon/saprickle/back.4bpp.lz");
+const u32 gMonShinyPalette_Saprickle[] = INCBIN_U32("graphics/pokemon/saprickle/shiny.gbapal.lz");
+const u8 gMonIcon_Saprickle[] = INCBIN_U8("graphics/pokemon/saprickle/icon.4bpp");
+const u8 gMonFootprint_Saprickle[] = INCBIN_U8("graphics/pokemon/saprickle/footprint.1bpp");
+
+const u32 gMonStillFrontPic_Molcharge[] = INCBIN_U32("graphics/pokemon/molcharge/front.4bpp.lz");
+const u32 gMonPalette_Molcharge[] = INCBIN_U32("graphics/pokemon/molcharge/normal.gbapal.lz");
+const u32 gMonBackPic_Molcharge[] = INCBIN_U32("graphics/pokemon/molcharge/back.4bpp.lz");
+const u32 gMonShinyPalette_Molcharge[] = INCBIN_U32("graphics/pokemon/molcharge/shiny.gbapal.lz");
+const u8 gMonIcon_Molcharge[] = INCBIN_U8("graphics/pokemon/molcharge/icon.4bpp");
+const u8 gMonFootprint_Molcharge[] = INCBIN_U8("graphics/pokemon/molcharge/footprint.1bpp");
+
 const u32 gMonStillFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
