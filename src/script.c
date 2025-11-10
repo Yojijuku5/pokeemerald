@@ -2,6 +2,7 @@
 #include "script.h"
 #include "event_data.h"
 #include "mystery_gift.h"
+#include "trainer_see.h"
 #include "util.h"
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
@@ -474,4 +475,10 @@ void InitRamScript_NoObjectEvent(u8 *script, u16 scriptSize)
     if (scriptSize > sizeof(gSaveBlock1Ptr->ramScript.data.script))
         scriptSize = sizeof(gSaveBlock1Ptr->ramScript.data.script);
     InitRamScript(script, scriptSize, MAP_GROUP(MAP_UNDEFINED), MAP_NUM(MAP_UNDEFINED), NO_OBJECT);
+}
+
+bool8 LoadTrainerObjectScript(void)
+{
+    sGlobalScriptContext.scriptPtr = gApproachingTrainers[gNoOfApproachingTrainers - 1].trainerScriptPtr;
+    return TRUE;
 }

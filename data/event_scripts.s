@@ -1067,3 +1067,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ModellaTown_Players_House_2F/scripts.inc"
 
 	.include "data/maps/Route23/scripts.inc"
+
+	.include "data/maps/DimwoodTown/scripts.inc"
+
+	.include "data/maps/DimwoodTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/DimwoodTown_Mart/scripts.inc"

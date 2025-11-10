@@ -4,16 +4,54 @@ Route23_MapScripts::
 
 	@ State descriptions for VAR_ROUTE23_STATE
 	@ 0: First enter route
-	@ 1: Init flags
-	@ 2: Start Starter event
-	@ 3: Chosen Starter
-	@ 4: Finished battle tutorial
-	@ 5: Finished talking with Prof
-	@ 6: Collected Parcel for Mom
+	@ 1: Walk up to Dimwood for Parcel
+	@ 2: Collected Parcel
+	@ 3: Started Starter Event
+	@ 4: Before opening Prof's bag
+	@ 5: Before first battle
+	@ 6: After first battle
+	@ 7: Before first Rival battle (delivered parcel)
+	@ 8: After first Rival battle
+	@ 9: Reached Ironside City (Prof's lab)
 
 Route23_OnFrame:
-	map_script_2 VAR_ROUTE23_STATE, 4, Route23_EventScript_FirstBattleEnd
+	map_script_2 VAR_ROUTE23_STATE, 0, Route23_EventScript_FirstEnterRoute
+	map_script_2 VAR_ROUTE23_STATE, 5, Route23_EventScript_FirstBattleEnd
 	.2byte 0
+
+Route23_EventScript_FirstEnterRoute::
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_HIDE_DIMWOOD_RIVAL
+	setflag FLAG_HIDE_ROUTE23_RIVAL
+	setvar VAR_ROUTE23_STATE, 1
+	end
+
+Route23_EventScript_StopEnterGrassSouth::
+	lockall
+	msgbox Route23_Text_NoPokemon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
+Route23_EventScript_StopEnterGrassEast::
+	lockall
+	msgbox Route23_Text_NoPokemon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	waitmovement 0
+	releaseall
+	end
+
+Route23_EventScript_StopEnterGrassWest::
+	lockall
+	msgbox Route23_Text_NoPokemon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+	releaseall
+	end
 
 Route23_EventScript_StartStarterEvent::
 	lockall
@@ -29,11 +67,11 @@ Route23_EventScript_StartStarterEvent::
 	playse SE_PIN
 	applymovement LOCALID_ROUTE23_PROF, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_Delay48
+	applymovement LOCALID_ROUTE23_PROF, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route23_Text_ProfAskForHelp2, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_ROUTE23_STATE, 2
+	setvar VAR_ROUTE23_STATE, 3
 	releaseall
 	end
 
@@ -41,57 +79,39 @@ Route23_EventScript_PreventExitWestBeforePokemon::
 	lockall
 	msgbox Route23_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_PreventExitWest
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
 	releaseall
 	end
 
-Route23_EventScript_PreventExitWestAfterPokemon::
+Route23_EventScript_PreventExitEastBeforePokemon::
 	lockall
-	msgbox Route23_Text_GrassIsHere, MSGBOX_DEFAULT
+	msgbox Route23_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_PreventExitWest
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
 	releaseall
 	end
 
-Route23_EventScript_PreventExitNorth::
+Route23_EventScript_PreventExitSouthBeforePokemon::
 	lockall
-	msgbox Route23_Text_GrassIsHere, MSGBOX_DEFAULT
+	msgbox Route23_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_MovePlayerDown
-	waitmovement 0
-	releaseall
-	end
-
-Route23_EventScript_PreventExitBattleSouth::
-	lockall
-	msgbox Route23_Text_NeedPokemon, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_MovePlayerUp
-	waitmovement 0
-	releaseall
-	end
-
-Route23_EventScript_PreventExitBattleEast::
-	lockall
-	msgbox Route23_Text_NeedPokemon, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_PreventBattleEast
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	releaseall
 	end
 
 Route23_EventScript_ProfsBag::
-	call_if_eq VAR_ROUTE23_STATE, 2, Route23_EventScript_BagGetPokemon
-	call_if_eq VAR_ROUTE23_STATE, 3, Route23_EventScript_BagGotPokemon
+	call_if_eq VAR_ROUTE23_STATE, 3, Route23_EventScript_BagGetPokemon
+	call_if_eq VAR_ROUTE23_STATE, 4, Route23_EventScript_BagGotPokemon
 	end
 
 Route23_EventScript_BagGetPokemon::
 	lock
 	faceplayer
 	setflag FLAG_SYS_POKEMON_GET
-	setvar VAR_ROUTE23_STATE, 3
+	setvar VAR_ROUTE23_STATE, 4
 	fadescreen FADE_TO_BLACK
 	special ChooseStarter
 	waitstate
@@ -126,9 +146,18 @@ Route23_EventScript_BagGotPokemon::
 	closemessage
 	end
 
+Route23_EventScript_PreventExitSouthAfterPokemon::
+	lockall
+	msgbox Route23_Text_DontWander, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
 Route23_EventScript_FirstBattleEnd::
 	lock
-	setvar VAR_ROUTE23_STATE, 5
+	setvar VAR_ROUTE23_STATE, 6
 	applymovement LOCALID_ROUTE23_PROF, Route23_Movement_MoveProfToGrass
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
@@ -153,13 +182,49 @@ Route23_EventScript_ProfHealsStarter::
 	release
 	end
 
-Route23_EventScript_MomParcelReminder::
-	lockall
-	msgbox Route23_Text_GoGetParcel, MSGBOX_DEFAULT
+Route23_EventScript_Rival::
+	call_if_eq VAR_ROUTE23_STATE, 7, Route23_EventScript_RivalBattle
+	call_if_eq VAR_ROUTE23_STATE, 8, Route23_EventScript_RivalStayBehind
+	end
+
+Route23_EventScript_RivalBattle::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	msgbox Route23_Text_RivalIntro, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, Route23_EventScript_StartRivalBattleTreecko
+	case 1, Route23_EventScript_StartRivalBattleTorchic
+	case 2, Route23_EventScript_StartRivalBattleMudkip
+	end
+
+Route23_EventScript_StartRivalBattleTreecko::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route23_Text_RivalDefeated
+	goto Route23_EventScript_AfterRivalBattle
+	end
+
+Route23_EventScript_StartRivalBattleTorchic::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route23_Text_RivalDefeated
+	goto Route23_EventScript_AfterRivalBattle
+	end
+
+Route23_EventScript_StartRivalBattleMudkip::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route23_Text_RivalDefeated
+	goto Route23_EventScript_AfterRivalBattle
+	end
+
+Route23_EventScript_AfterRivalBattle::
+	setvar VAR_ROUTE23_STATE, 8
+	setflag FLAG_DEFEATED_RIVAL_ROUTE103
+	setflag FLAG_HIDE_ROUTE23_RIVAL
+	msgbox Route23_Text_AfterRivalBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Route23_Movement_MovePlayerUp
-	waitmovement 0
-	releaseall
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	end
+
+Route23_EventScript_RivalStayBehind::
+	faceplayer
+	msgbox Route23_Text_RivalStayBehind, MSGBOX_DEFAULT
+	closemessage
 	end
 
 Route23_EventScript_FatMan::
@@ -171,22 +236,6 @@ Route23_EventScript_RouteSign::
 	msgbox Route23_Text_RouteSign, MSGBOX_SIGN
 	end
 
-Route23_Movement_MovePlayerDown:
-	walk_down
-	step_end
-
-Route23_Movement_MovePlayerUp:
-	walk_up
-	step_end
-
-Route23_Movement_PreventExitWest:
-	walk_right
-	step_end
-
-Route23_Movement_PreventBattleEast:
-	walk_left
-	step_end
-
 Route23_Movement_ProfApproachPlayer:
 	walk_down
 	walk_in_place_faster_right
@@ -194,7 +243,7 @@ Route23_Movement_ProfApproachPlayer:
 
 Route23_Movement_MoveProfToGrass:
 	walk_right
-	walk_down
+	walk_right
 	walk_right
 	face_player
 	step_end
@@ -208,6 +257,11 @@ Route23_Movement_MoveProfOutOfScene:
 	walk_up
 	walk_up
 	step_end
+
+Route23_Text_NoPokemon:
+	.string "MOM's voice rings in your head...\p"
+	.string "{PLAYER}! It's too dangerous to enter\n"
+	.string "the tall grass without a POKéMON!$"
 
 Route23_Text_ProfAskForHelp1:
 	.string "Sorry, but do you mind helping me out\n"
@@ -241,11 +295,8 @@ Route23_Text_ProfAskForHelp2:
 Route23_Text_DontLeaveMe:
 	.string "Do you not want a POKéMON?$"
 
-Route23_Text_GrassIsHere:
-	.string "Hey! The wild POKéMON are over here!$"
-
-Route23_Text_NeedPokemon:
-	.string "You need a POKéMON first!$"
+Route23_Text_DontWander:
+	.string "Try not to stray too far away!$"
 
 Route23_Text_StarterGet:
 	.string "So you chose {STR_VAR_1}?\n"
@@ -258,8 +309,8 @@ Route23_Text_WhyNotGiveNicknameToMon:
 
 Route23_Text_BattleInstructions:
 	.string "Now, what I'd like you to do is walk into\n"
-	.string "the patch of grass south of us and\l"
-	.string "battle a wild POKéMON.\p"
+	.string "the patch of grass to the right of us\l"
+	.string "and battle a wild POKéMON.\p"
 	.string "Don't worry! As long as you have your\n"
 	.string "POKéMON by your side you'll be fine!$"
 
@@ -282,10 +333,36 @@ Route23_Text_YouShouldHeadToLab:
 	.string "you'll find my POKéMON lab.\p"
 	.string "See you there!$"
 
-Route23_Text_GoGetParcel:
-	.string "Mom's voice echoes in your head...\p"
-	.string "{PLAYER}! Please go collect my parcel\n"
-	.string "in DIMWOOD TOWN!$"
+Route23_Text_RivalIntro:
+	.string "Aha! Trainer spotted!\n"
+	.string "And you know what that means! ...Right?$"
+
+Route23_Text_RivalDefeated:
+	.string "W-Wow...!$"
+
+Route23_Text_AfterRivalBattle:
+	.string "That was... Amazing!\p"
+	.string "I've never seen someone so composed\n"
+	.string "when battling! ...Not that I've been a\l"
+	.string "trainer for very long though... Haha...\l"
+	.string "Although it seems like you're a new\l"
+	.string "trainer as well. Looks like I've got a\l"
+	.string "lot to learn already...\p"
+	.string "Oh, what's your name by the way?\p"
+	.string "... ... ...\p"
+	.string "{PLAYER}!\n"
+	.string "I'm THOMAS, nice to meet you!\p"
+	.string "... ... ...\p"
+	.string "I-I'm going to be heading towards\n"
+	.string "IRONSIDE city next, what about you?\p"
+	.string "Oh! You as well, that's good to hear.\n"
+	.string "Maybe I'll see you up ahead then!\p"
+	.string "Oh! You go ahead though, I need to\n"
+	.string "organize my items and POKéMON first...$"
+
+Route23_Text_RivalStayBehind:
+	.string "Don't mind me!\n"
+	.string "See you at IRONSIDE city!$"
 
 Route23_Text_CutTree:
 	.string "I don't remember this tree being here...\p"

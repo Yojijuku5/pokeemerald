@@ -1,0 +1,35 @@
+{
+  "id": "MAP_DIMWOOD_TOWN_POKEMON_CENTER",
+  "name": "DimwoodTown_PokemonCenter",
+  "layout": "LAYOUT_DIMWOOD_TOWN_POKEMON_CENTER",
+  "music": "MUS_POKE_CENTER",
+  "region_map_section": "MAPSEC_DIMWOOD_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DIMWOOD_TOWN",
+      "dest_warp_id": "WARP_ID_POKECENTER"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DIMWOOD_TOWN",
+      "dest_warp_id": "WARP_ID_POKECENTER"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

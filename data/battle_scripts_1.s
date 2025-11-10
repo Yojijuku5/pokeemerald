@@ -1722,6 +1722,8 @@ BattleScript_EffectBatonPass::
 BattleScript_EffectSwitchMon::
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_NoMonForSwitch
+	printstring STRINGID_MONWENTBACK
+	waitmessage B_WAIT_TIME_LONG
 	openpartyscreen BS_ATTACKER, BattleScript_NoMonForSwitch
 	switchoutabilities BS_ATTACKER
 	waitstate

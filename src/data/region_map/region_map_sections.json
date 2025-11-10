@@ -1072,10 +1072,6 @@
       "name": "PATTERN BUSH"
     },
     {
-      "id": "MAPSEC_ALTERING_CAVE_FRLG",
-      "name": "ALTERING CAVE"
-    },
-    {
       "id": "MAPSEC_TANOBY_CHAMBERS",
       "name": "TANOBY CHAMBERS"
     },
@@ -1238,6 +1234,10 @@
       "y": 11,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_DIMWOOD_TOWN",
+      "name": "DIMWOOD TOWN"
     }
   ]
 }

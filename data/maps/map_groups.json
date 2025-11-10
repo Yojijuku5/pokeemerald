@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_IndoorModella"
+    "gMapGroup_IndoorModella",
+    "gMapGroup_IndoorDimwood"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -95,7 +96,8 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "ModellaTown",
-    "Route23"
+    "Route23",
+    "DimwoodTown"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -627,5 +629,9 @@
   "gMapGroup_IndoorModella": [
     "ModellaTown_Players_House_1F",
     "ModellaTown_Players_House_2F"
+  ],
+  "gMapGroup_IndoorDimwood": [
+    "DimwoodTown_PokemonCenter",
+    "DimwoodTown_Mart"
   ]
 }

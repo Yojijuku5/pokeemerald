@@ -433,6 +433,7 @@ static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 
 static const u8 sText_NoMonForSwitch[] = _("No POKéMON to switch to!");
+static const u8 sText_MonWentBack[] = _("{B_ACTIVE_NAME_WITH_PREFIX} went back\nto {B_PLAYER_NAME}!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -889,6 +890,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_TRAINER1WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer1WinText,
     [STRINGID_TRAINER2WINTEXT - BATTLESTRINGS_TABLE_START] = sText_Trainer2WinText,
     [STRINGID_NOMONFORSWITCH - BATTLESTRINGS_TABLE_START] = sText_NoMonForSwitch,
+    [STRINGID_MONWENTBACK - BATTLESTRINGS_TABLE_START] = sText_MonWentBack,
 };
 
 const u16 gMissStringIds[] =

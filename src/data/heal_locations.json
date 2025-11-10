@@ -143,6 +143,18 @@
       "map": "MAP_ROUTE101",
       "x": 10,
       "y": 10
+    },
+    {
+      "id": "HEAL_LOCATION_MODELLA_TOWN",
+      "map": "MAP_MODELLA_TOWN",
+      "x": 3,
+      "y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_DIMWOOD_TOWN",
+      "map": "MAP_DIMWOOD_TOWN",
+      "x": 4,
+      "y": 17
     }
   ]
 }

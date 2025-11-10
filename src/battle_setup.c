@@ -664,9 +664,9 @@ static void CB2_EndWildBattle(void)
     }
     else
     {
-        if (VarGet(VAR_ROUTE23_STATE) == 3)
+        if (VarGet(VAR_ROUTE23_STATE) == 4)
         {
-            VarSet(VAR_ROUTE23_STATE, 4);
+            VarSet(VAR_ROUTE23_STATE, 5);
         }
         SetMainCallback2(CB2_ReturnToField);
         gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
