@@ -232,6 +232,14 @@ Route23_EventScript_FatMan::
 	closemessage
 	end
 
+Route23_EventScript_WildPokemon::
+	msgbox Route23_Text_WildPokemon, MSGBOX_NPC
+	end
+
+Route23_EventScript_RoutePathing::
+	msgbox Route23_Text_RoutePathing, MSGBOX_NPC
+	end
+
 Route23_EventScript_RouteSign::
 	msgbox Route23_Text_RouteSign, MSGBOX_SIGN
 	end
@@ -356,17 +364,26 @@ Route23_Text_AfterRivalBattle:
 	.string "I-I'm going to be heading towards\n"
 	.string "IRONSIDE city next, what about you?\p"
 	.string "Oh! You as well, that's good to hear.\n"
-	.string "Maybe I'll see you up ahead then!\p"
-	.string "Oh! You go ahead though, I need to\n"
-	.string "organize my items and POKéMON first...$"
+	.string "Maybe I'll see you up ahead then!$"
 
 Route23_Text_RivalStayBehind:
-	.string "Don't mind me!\n"
-	.string "See you at IRONSIDE city!$"
+	.string "Oh! You go ahead though, I need to\n"
+	.string "organize my items and POKéMON first...$"
 
 Route23_Text_CutTree:
 	.string "I don't remember this tree being here...\p"
 	.string "If only there was a way to cut it down...$"
+
+Route23_Text_WildPokemon:
+	.string "If you don't have a POKéMON with you,\n"
+	.string "you must be extra careful not to walk\l"
+	.string "into the tall grass.\p"
+	.string "Wild POKéMON will jump out at you!$"
+
+Route23_Text_RoutePathing:
+	.string "We used to be able to walk straight\n"
+	.string "down ROUTE 23 until those trees grew,\l"
+	.string "blocking the main path...$"
 
 Route23_Text_RouteSign:
 	.string "ROUTE 23\p"

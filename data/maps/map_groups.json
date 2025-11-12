@@ -628,10 +628,16 @@
   ],
   "gMapGroup_IndoorModella": [
     "ModellaTown_Players_House_1F",
-    "ModellaTown_Players_House_2F"
+    "ModellaTown_Players_House_2F",
+    "ModellaTown_House1",
+    "ModellaTown_House2"
   ],
   "gMapGroup_IndoorDimwood": [
     "DimwoodTown_PokemonCenter",
-    "DimwoodTown_Mart"
+    "DimwoodTown_Mart",
+    "DimwoodTown_Rivals_House_1F",
+    "DimwoodTown_House2",
+    "DimwoodTown_Rivals_House_2F",
+    "DimwoodTown_Shed"
   ]
 }

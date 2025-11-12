@@ -1,8 +1,8 @@
 {
-  "id": "MAP_DIMWOOD_TOWN_MART",
-  "name": "DimwoodTown_Mart",
-  "layout": "LAYOUT_DIMWOOD_TOWN_MART",
-  "music": "MUS_POKE_MART",
+  "id": "MAP_DIMWOODTOWN_RIVALS_HOUSE_1F",
+  "name": "DimwoodTown_Rivals_House_1F",
+  "layout": "LAYOUT_DIMWOODTOWN_RIVALS_HOUSE_1F",
+  "music": "MUS_OLDALE",
   "region_map_section": "MAPSEC_DIMWOOD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,60 +15,54 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_DIMWOOD_MART_EMPLOYEE",
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 1,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "DimwoodTown_Mart_EventScript_Employee",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
-      "x": 8,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 7,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DimwoodTown_Mart_EventScript_PotionsToPokeballs",
+      "script": "DimwoodTown_Rivals_House_1F_EventScript_RivalSecondGuess",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 6,
-      "y": 2,
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 4,
+      "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DimwoodTown_Mart_EventScript_LookingForAntidote",
+      "script": "DimwoodTown_Rivals_House_1F_EventScript_RivalStarterGet",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 3,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_DIMWOOD_TOWN",
-      "dest_warp_id": "WARP_ID_MART"
+      "dest_warp_id": "WARP_ID_RIVALS_HOUSE_1F"
     },
     {
       "x": 4,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_DIMWOOD_TOWN",
-      "dest_warp_id": "WARP_ID_MART"
+      "dest_warp_id": "WARP_ID_RIVALS_HOUSE_1F"
+    },
+    {
+      "warp_id": "WARP_ID_RIVALS_HOUSE_1F_STAIRS",
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_DIMWOOD_TOWN_RIVALS_HOUSE_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -1073,3 +1073,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/DimwoodTown_PokemonCenter/scripts.inc"
 
 	.include "data/maps/DimwoodTown_Mart/scripts.inc"
+
+	.include "data/maps/ModellaTown_House1/scripts.inc"
+
+	.include "data/maps/ModellaTown_House2/scripts.inc"
+
+	.include "data/maps/DimwoodTown_Rivals_House_1F/scripts.inc"
+
+	.include "data/maps/DimwoodTown_House2/scripts.inc"
+
+	.include "data/maps/DimwoodTown_Rivals_House_2F/scripts.inc"
+
+	.include "data/maps/DimwoodTown_Shed/scripts.inc"

@@ -45,6 +45,14 @@ DimwoodTown_Mart_Pokemart:
 	.2byte ITEM_AWAKENING
 	pokemartlistend
 
+DimwoodTown_Mart_EventScript_PotionsToPokeballs::
+	msgbox DimwoodTown_Mart_Text_PotionsToPokeballs, MSGBOX_NPC
+	end
+
+DimwoodTown_Mart_EventScript_LookingForAntidote::
+	msgbox DimwoodTown_Mart_Text_LookingForAntidote, MSGBOX_NPC
+	end
+
 DimwoodTown_Mart_Movement_EmployeeGiveParcel:
 	emote_exclamation_mark
 	delay_16
@@ -59,3 +67,14 @@ DimwoodTown_Mart_Text_ReceiveDelivery:
 
 DimwoodTown_Mart_Text_MakeSureToDeliver:
 	.string "Make sure you deliver that Parcel!$"
+
+DimwoodTown_Mart_Text_PotionsToPokeballs:
+	.string "From POTIONS to POKéBALLS and\n"
+	.string "everything in between, you know you\l"
+	.string "can get your essentials from the\l"
+	.string "POKéMART.$"
+
+DimwoodTown_Mart_Text_LookingForAntidote:
+	.string "I'm looking for an ANTIDOTE so I can\n"
+	.string "cure my POKeMON when I'm away from a\l"
+	.string "POKeMON CENTER.$"

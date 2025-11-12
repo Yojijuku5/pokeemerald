@@ -1,9 +1,9 @@
 {
-  "id": "MAP_MODELLA_TOWN_PLAYERS_HOUSE_2F",
-  "name": "ModellaTown_Players_House_2F",
-  "layout": "LAYOUT_MODELLA_TOWN_PLAYERS_HOUSE_2F",
-  "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_MODELLA_TOWN",
+  "id": "MAP_DIMWOOD_TOWN_RIVALS_HOUSE_2F",
+  "name": "DimwoodTown_Rivals_House_2F",
+  "layout": "LAYOUT_DIMWOOD_TOWN_RIVALS_HOUSE_2F",
+  "music": "MUS_OLDALE",
+  "region_map_section": "MAPSEC_DIMWOOD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -15,39 +15,29 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BALTOY_DOLL",
-      "x": 4,
-      "y": 4,
+      "graphics_id": "OBJ_EVENT_GFX_AZURILL_DOLL",
+      "x": 3,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ModellaTown_Players_House_2F_EventScript_Doll",
+      "script": "DimwoodTown_Rivals_House_2F_EventScript_AzurillDoll",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 5,
+      "x": 7,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_MODELLA_TOWN_PLAYERS_HOUSE_1F",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_DIMWOODTOWN_RIVALS_HOUSE_1F",
+      "dest_warp_id": "WARP_ID_RIVALS_HOUSE_1F_STAIRS"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_MODELLA_INTRO_STATE",
-      "var_value": "0",
-      "script": "ModellaTown_Players_House_2F_EventScript_SetClock"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
@@ -71,7 +61,15 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ModellaTown_Players_House_2F_EventScript_PC"
+      "script": "DimwoodTown_Rivals_House_2F_EventScript_CheckRivalsPC"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlayersHouse_2F_EventScript_GameCube"
     }
   ]
 }

@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_MODELLA_TOWN_PLAYERS_HOUSE_2F",
       "name": "ModellaTown_Players_House_2F_Layout",
-      "width": 9,
-      "height": 8,
+      "width": 7,
+      "height": 7,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/ModellaTown_Players_House_2F/border.bin",
@@ -4480,6 +4480,66 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/DimwoodTown_Mart/border.bin",
       "blockdata_filepath": "data/layouts/DimwoodTown_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_MODELLA_TOWN_HOUSE1",
+      "name": "ModellaTown_House1_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ModellaTown_House1/border.bin",
+      "blockdata_filepath": "data/layouts/ModellaTown_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MODELLA_TOWN_HOUSE2",
+      "name": "ModellaTown_House2_Layout",
+      "width": 13,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ModellaTown_House2/border.bin",
+      "blockdata_filepath": "data/layouts/ModellaTown_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_DIMWOODTOWN_RIVALS_HOUSE_1F",
+      "name": "DimwoodTown_Rivals_House_1F_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/DimwoodTown_Rivals_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/DimwoodTown_Rivals_House_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DIMWOOD_TOWN_HOUSE2",
+      "name": "DimwoodTown_House2_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/DimwoodTown_House2/border.bin",
+      "blockdata_filepath": "data/layouts/DimwoodTown_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_DIMWOOD_TOWN_RIVALS_HOUSE_2F",
+      "name": "DimwoodTown_Rivals_House_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/DimwoodTown_Rivals_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/DimwoodTown_Rivals_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DIMWOOD_TOWN_SHED",
+      "name": "DimwoodTown_Shed_Layout",
+      "width": 6,
+      "height": 5,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_InsideOfTruck",
+      "border_filepath": "data/layouts/DimwoodTown_Shed/border.bin",
+      "blockdata_filepath": "data/layouts/DimwoodTown_Shed/map.bin"
     }
   ]
 }
