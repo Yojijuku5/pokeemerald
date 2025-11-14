@@ -146,7 +146,6 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_UNDERWATER_SOOTOPOLIS,      MAPSEC_SOOTOPOLIS_CITY},
     {MAPSEC_UNDERWATER_SEAFLOOR_CAVERN, MAPSEC_ROUTE_128},
     {MAPSEC_AQUA_HIDEOUT,               MAPSEC_LILYCOVE_CITY},
-    {MAPSEC_AQUA_HIDEOUT_OLD,           MAPSEC_LILYCOVE_CITY},
     {MAPSEC_MAGMA_HIDEOUT,              MAPSEC_ROUTE_112},
     {MAPSEC_UNDERWATER_SEALED_CHAMBER,  MAPSEC_ROUTE_134},
     {MAPSEC_PETALBURG_WOODS,            MAPSEC_ROUTE_104},
@@ -201,11 +200,6 @@ static const struct UCoords16 sMarineCaveLocationCoords[MARINE_CAVE_LOCATIONS] =
     [MARINE_CAVE_COORD(ROUTE_127_SOUTH)] = {25, 7},
     [MARINE_CAVE_COORD(ROUTE_129_WEST)]  = {24, 10},
     [MARINE_CAVE_COORD(ROUTE_129_EAST)]  = {24, 10}
-};
-
-static const mapsec_u8_t sMapSecAquaHideoutOld[] =
-{
-    MAPSEC_AQUA_HIDEOUT_OLD
 };
 
 static const struct OamData sRegionMapCursorOam =
@@ -1274,15 +1268,9 @@ static void GetMarineCaveCoords(u16 *x, u16 *y)
 
 // Probably meant to be an "IsPlayerInIndoorDungeon" function, but in practice it only has the one mapsec
 // Additionally, because the mapsec doesnt exist in Emerald, this function always returns FALSE
+// 14/11/25: Deleted the for loop, now just returns FALSE
 static bool32 IsPlayerInAquaHideout(mapsec_u8_t mapSecId)
 {
-    u32 i;
-
-    for (i = 0; i < ARRAY_COUNT(sMapSecAquaHideoutOld); i++)
-    {
-        if (sMapSecAquaHideoutOld[i] == mapSecId)
-            return TRUE;
-    }
     return FALSE;
 }
 
@@ -1613,10 +1601,7 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 
 u8 *GetMapNameHandleAquaHideout(u8 *dest, mapsec_u16_t mapSecId)
 {
-    if (mapSecId == MAPSEC_AQUA_HIDEOUT_OLD)
-        return StringCopy(dest, gText_Hideout);
-    else
-        return GetMapNameGeneric(dest, mapSecId);
+    return GetMapNameGeneric(dest, mapSecId);
 }
 
 static void GetMapSecDimensions(mapsec_u16_t mapSecId, u16 *x, u16 *y, u16 *width, u16 *height)
