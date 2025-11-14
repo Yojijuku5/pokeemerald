@@ -4174,7 +4174,6 @@ static void TranslateJapaneseEmeraldShows(TVShow *shows)
     }
 }
 
-//14/11/25: Removed if statements bc removed unused Mapsecs
 void SanitizeTVShowLocationsForRuby(TVShow *shows)
 {
     int i;
@@ -4184,9 +4183,13 @@ void SanitizeTVShowLocationsForRuby(TVShow *shows)
         switch (shows[i].common.kind)
         {
         case TVSHOW_WORLD_OF_MASTERS:
-            memset(&shows[i], 0, sizeof(TVShow));
+            if (shows[i].worldOfMasters.location > KANTO_MAPSEC_START)
+                memset(&shows[i], 0, sizeof(TVShow));
+            break;
         case TVSHOW_POKEMON_TODAY_FAILED:
-            memset(&shows[i], 0, sizeof(TVShow));
+            if (shows[i].pokemonTodayFailed.location > KANTO_MAPSEC_START)
+                memset(&shows[i], 0, sizeof(TVShow));
+            break;
         }
     }
 }
