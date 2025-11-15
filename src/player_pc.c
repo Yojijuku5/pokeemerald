@@ -495,13 +495,14 @@ static void PlayerPC_TurnOff(u8 taskId)
 {
     if (sTopMenuNumOptions == NUM_BEDROOM_PC_OPTIONS) // Flimsy way to determine if Bedroom PC is in use
     {
-        if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
+        if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE) //Redundant bc removed player gender differences
         {
-            ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
+            ScriptContext_SetupScript(ModellaTown_Players_House_2F_EventScript_TurnOffPlayerPC);
         }
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
         {
-            ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+            //ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+            ScriptContext_SetupScript(ModellaTown_Players_House_2F_EventScript_TurnOffPlayerPC);
         }
         /*
         if (gSaveBlock2Ptr->playerGender == MALE)//Despite location checking when pc turns on, it gender checks for turning off

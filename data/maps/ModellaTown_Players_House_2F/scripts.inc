@@ -22,9 +22,24 @@ ModellaTown_Players_House_2F_EventScript_CheckPlayersPC::
 	releaseall
 	end
 
+ModellaTown_Players_House_2F_EventScript_TurnOffPlayerPC::
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	releaseall
+	end
+
 ModellaTown_Players_House_2F_EventScript_Doll::
 	msgbox ModellaTown_Players_House_2F_Text_Doll, MSGBOX_DEFAULT
 	closemessage
+	end
+
+PlayersHouse_2F_EventScript_Notebook::
+	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+	end
+
+PlayersHouse_2F_EventScript_GameCube::
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
 	end
 
 ModellaTown_Players_House_2F_Text_SetClockThenLeave:

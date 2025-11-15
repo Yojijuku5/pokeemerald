@@ -81,11 +81,11 @@ ModellaTown_Players_House_1F_EventScript_GiveParcel::
 	call Common_EventScript_PlayerHandedOverTheItem
 	msgbox ModellaTown_Players_House_1F_Text_ExplainPokemon, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
-	message ModellaTown_Players_House_Text_SwitchShoesWithRunningShoes
+	message ModellaTown_Players_House_1F_Text_SwitchShoesWithRunningShoes
 	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
-	msgbox ModellaTown_Players_House_Text_ExplainRunningShoes, MSGBOX_DEFAULT
-	msgbox ModellaTown_Players_House_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	msgbox ModellaTown_Players_House_1F_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	msgbox ModellaTown_Players_House_1F_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_HIDE_DIMWOOD_RIVAL
@@ -179,17 +179,17 @@ ModellaTown_Players_House_1F_Text_ExplainPokemon:
 	.string "new pair of RUNNING SHOES for you.\l"
 	.string "Why don't you try them on now?$"
 
-ModellaTown_Players_House_Text_SwitchShoesWithRunningShoes:
+ModellaTown_Players_House_1F_Text_SwitchShoesWithRunningShoes:
 	.string "{PLAYER} switched shoes with the\n"
 	.string "RUNNING SHOES.$"
 
-ModellaTown_Players_House_Text_ExplainRunningShoes:
+ModellaTown_Players_House_1F_Text_ExplainRunningShoes:
 	.string "I'm sure you know how to run, you've\n"
-	.string "been doing it for 14 years now!\l"
-	.string "...But just in case, you “Press the B\l"
-	.string "button” to run extra fast.$"
+	.string "been doing it for 14 years now!\p"
+	.string "...But just in case you've forgotten,\n"
+	.string "“Press the B button” to run extra fast.$"
 
-ModellaTown_Players_House_Text_ComeHomeIfAnythingHappens:
+ModellaTown_Players_House_1F_Text_ComeHomeIfAnythingHappens:
 	.string "Well, I guess you'll be off then...\n"
 	.string "Despite our humble living, I hope you'll\l"
 	.string "come back to visit from time to time.\l"
@@ -204,3 +204,21 @@ ModellaTown_Players_House_1F_Text_YouShouldRestABit:
 ModellaTown_Players_House_1F_Text_TakeCare:
 	.string "Take care now!\n"
 	.string "Remember I'll always be here for you!$"
+
+@ Emerald leftovers
+PlayersHouse_1F_Text_TheresAMovieOnTV:
+	.string "There is a movie on TV.\p"
+	.string "Two men are dancing on a big piano\n"
+	.string "keyboard.\p"
+	.string "Better get going!$"
+
+PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
+	.string "We bring you this emergency\n"
+	.string "news flash!\p"
+	.string "In various HOENN locales, there have\n"
+	.string "been reports of a BZZT…colored\l"
+	.string "POKéMON in flight.\p"
+	.string "The identity of this POKéMON is\n"
+	.string "currently unknown.\p"
+	.string "We now return you to the regular\n"
+	.string "movie program.$"

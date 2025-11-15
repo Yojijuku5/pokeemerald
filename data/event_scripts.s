@@ -112,7 +112,6 @@ gStdScripts_End::
 	.include "data/maps/MossdeepCity/scripts.inc"
 	.include "data/maps/SootopolisCity/scripts.inc"
 	.include "data/maps/EverGrandeCity/scripts.inc"
-	.include "data/maps/LittlerootTown/scripts.inc"
 	.include "data/maps/OldaleTown/scripts.inc"
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
@@ -160,11 +159,6 @@ gStdScripts_End::
 	.include "data/maps/Underwater_Route129/scripts.inc"
 	.include "data/maps/Underwater_Route105/scripts.inc"
 	.include "data/maps/Underwater_Route125/scripts.inc"
-	.include "data/maps/LittlerootTown_BrendansHouse_1F/scripts.inc"
-	.include "data/maps/LittlerootTown_BrendansHouse_2F/scripts.inc"
-	.include "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc"
-	.include "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc"
-	.include "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc"
 	.include "data/maps/OldaleTown_House1/scripts.inc"
 	.include "data/maps/OldaleTown_House2/scripts.inc"
 	.include "data/maps/OldaleTown_PokemonCenter_1F/scripts.inc"
@@ -455,7 +449,6 @@ gStdScripts_End::
 	.include "data/maps/RecordCorner/scripts.inc"
 	.include "data/maps/BattleColosseum_4P/scripts.inc"
 	.include "data/maps/ContestHall/scripts.inc"
-	.include "data/maps/InsideOfTruck/scripts.inc"
 	.include "data/maps/SSTidalCorridor/scripts.inc"
 	.include "data/maps/SSTidalLowerDeck/scripts.inc"
 	.include "data/maps/SSTidalRooms/scripts.inc"
@@ -1061,27 +1054,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/ModellaTown/scripts.inc"
-
 	.include "data/maps/ModellaTown_Players_House_1F/scripts.inc"
-
 	.include "data/maps/ModellaTown_Players_House_2F/scripts.inc"
-
 	.include "data/maps/Route23/scripts.inc"
-
 	.include "data/maps/DimwoodTown/scripts.inc"
-
 	.include "data/maps/DimwoodTown_PokemonCenter/scripts.inc"
-
 	.include "data/maps/DimwoodTown_Mart/scripts.inc"
-
 	.include "data/maps/ModellaTown_House1/scripts.inc"
-
 	.include "data/maps/ModellaTown_House2/scripts.inc"
-
 	.include "data/maps/DimwoodTown_Rivals_House_1F/scripts.inc"
-
 	.include "data/maps/DimwoodTown_House2/scripts.inc"
-
 	.include "data/maps/DimwoodTown_Rivals_House_2F/scripts.inc"
-
 	.include "data/maps/DimwoodTown_Shed/scripts.inc"
