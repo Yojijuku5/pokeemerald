@@ -1,18 +1,6 @@
 {
   "heal_locations": [
     {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "x": 4,
-      "y": 2
-    },
-    {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-      "map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-      "x": 4,
-      "y": 2
-    },
-    {
       "id": "HEAL_LOCATION_PETALBURG_CITY",
       "map": "MAP_PETALBURG_CITY",
       "x": 20,
@@ -67,18 +55,6 @@
       "y": 49
     },
     {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE",
-      "map": "MAP_LITTLEROOT_TOWN",
-      "x": 5,
-      "y": 9
-    },
-    {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE",
-      "map": "MAP_LITTLEROOT_TOWN",
-      "x": 14,
-      "y": 9
-    },
-    {
       "id": "HEAL_LOCATION_OLDALE_TOWN",
       "map": "MAP_OLDALE_TOWN",
       "x": 6,
@@ -131,12 +107,6 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
-    },
-    {
-      "id": "HEAL_LOCATION_LITTLEROOT_TOWN",
-      "map": "MAP_LITTLEROOT_TOWN",
-      "x": 10,
-      "y": 10
     },
     {
       "id": "HEAL_LOCATION_ROUTE101",
