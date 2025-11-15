@@ -312,6 +312,7 @@ static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
 static void BufferStat(u8* dst, s8 natureMod, u32 stat, u32 strId, u32 n);
+static void BufferMoveType(u8* dst, u16 moveIndex, u32 stat, u32 strId, u32 n);
 
 // const rom data
 #include "data/text/move_descriptions.h"
@@ -3560,7 +3561,8 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
         }
         else
         {
-            ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            BufferMoveType(gStringVar1, moveIndex, gBattleMoves[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            //ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
 
@@ -4172,8 +4174,8 @@ static void KeepMoveSelectorVisible(u8 firstSpriteId)
 
 static void BufferStat(u8* dst, s8 natureMod, u32 stat, u32 strId, u32 n)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{05}");
+    static const u8 sTextNatureDown[] = _("{COLOR}{12}");
+    static const u8 sTextNatureUp[] = _("{COLOR}{09}");
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     u8* txtPtr;
 
@@ -4186,4 +4188,18 @@ static void BufferStat(u8* dst, s8 natureMod, u32 stat, u32 strId, u32 n)
 
     ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
+}
+
+static void BufferMoveType(u8* dst, u16 moveIndex, u32 stat, u32 strId, u32 n)
+{
+    static const u8 sTextPhysicalMovePower[] = _("{COLOR}{05}");
+    static const u8 sTextSpecialMovePower[] = _("{COLOR}{08}");
+    u8* txtPtr;
+
+    if (gBattleMoves[moveIndex].category == MOVE_CATEGORY_PHYSICAL)
+        txtPtr = StringCopy(dst, sTextPhysicalMovePower);
+    else
+        txtPtr = StringCopy(dst, sTextSpecialMovePower);
+
+    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
 }

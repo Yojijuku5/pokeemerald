@@ -15,7 +15,7 @@ DimwoodTown_House2_Text_PokemonLvlUp:
 	.string "learn new, more powerful moves.$"
 
 DimwoodTown_House2_Text_MostTrainersGoLeft:
-	.string "Most trainers around here head left\n"
+	.string "Most trainers around here head west\n"
 	.string "for IRONSIDE CITY, but sometimes\l"
 	.string "a more powerful trainer will head north\l"
 	.string "for ROUTE 22.$"

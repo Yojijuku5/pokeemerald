@@ -209,6 +209,7 @@ static void ConfirmToss(u8);
 static void CancelToss(u8);
 static void ConfirmSell(u8);
 static void CancelSell(u8);
+static void BufferMoveType(u8* dst, u16 moveIndex, u32 stat, u32 strId, u32 n);
 
 static const struct BgTemplate sBgTemplates_ItemMenu[] =
 {
@@ -2570,7 +2571,8 @@ static void PrintTMHMMoveData(u16 itemId)
         }
         else
         {
-            ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            BufferMoveType(gStringVar1, move, gBattleMoves[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            //ConvertIntToDecimalStringN(gStringVar1, move, gBattleMoves[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
         BagMenu_Print(WIN_TMHM_INFO, FONT_NORMAL, text, 7, 12, 0, 0, TEXT_SKIP_DRAW, COLORID_TMHM_INFO);
@@ -2593,4 +2595,18 @@ static void PrintTMHMMoveData(u16 itemId)
 
         CopyWindowToVram(WIN_TMHM_INFO, COPYWIN_GFX);
     }
+}
+
+static void BufferMoveType(u8* dst, u16 moveIndex, u32 stat, u32 strId, u32 n)
+{
+    static const u8 sTextPhysicalMovePower[] = _("{COLOR}{01}");
+    static const u8 sTextSpecialMovePower[] = _("{COLOR}{07}");
+    u8* txtPtr;
+
+    if (gBattleMoves[moveIndex].category == MOVE_CATEGORY_PHYSICAL)
+        txtPtr = StringCopy(dst, sTextPhysicalMovePower);
+    else
+        txtPtr = StringCopy(dst, sTextSpecialMovePower);
+
+    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
 }
